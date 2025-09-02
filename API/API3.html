@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Send Mail</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .mail-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .mail-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .mail-box input, .mail-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .mail-box button {
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .mail-box button:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mail-box">
+    <h2>Send Email</h2>
+    <form onsubmit="sendEmail(); this.reset(); return false;">
+      <input type="text" id="toEmail" placeholder="Recipient Email" required>
+      <input type="text" id="fromEmail" placeholder="Your Email" required>
+      <input type="text" id="subject" placeholder="Subject" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  
+
+</body>
+</html>
