@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+
 <html>
   <head>
     <title>Send Mail with  </title>
@@ -8,18 +8,21 @@
 <form method="post">
    <input type="button" value="Send Email" onclick="sendEmail()"/>
 </form>
-<script type="text/javascript">
-  Function sendEmail()  {
-      Email.send({
-    Host : "s1.maildns.net",
-    To : 'rockyanantha7@gmail.com',
-    From : "realanantha@gmail.com",
-    Subject : "This is the subject",
-    Body : "I this S Ananthapathmanapan for St Joseph's College"
-}).then(
-  message => alert(message)
-); }
-   
+<script>
+function sendEmail() {
+  fetch("http://localhost:3000/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      to: "rockyanantha7@gmail.com",
+      subject: "This is the subject",
+      body: "I am S Ananthapathmanapan from St Joseph's College"
+    })
+  })
+  .then(res => res.text())
+  .then(data => alert(data));
+}
 </script>
 </body>
 </html>
+

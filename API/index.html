@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send Mail API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .mail-form {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    .mail-form h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .mail-form input, .mail-form textarea, .mail-form button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .mail-form button {
+      background: #4CAF50;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .mail-form button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="mail-form">
+    <h2>Send Email</h2>
+    <input type="email" id="to" placeholder="Recipient Email" required>
+    <input type="text" id="subject" placeholder="Subject" required>
+    <textarea id="body" placeholder="Enter message..." rows="5" required></textarea>
+    <button onclick="sendEmail()">Send</button>
+  </div>
+
+  <script>
+    function sendEmail() {
+    
+      let to = document.getElementById("to").value;
+      let subject = document.getElementById("subject").value;
+      let body = document.getElementById("body").value;
+
+      // Call Node.js API
+      fetch("https://mail.google.com/mail/u/0/#inbox", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ to, subject, body })
+      })
+      .then(res => res.text())
+      .then(data => alert(data))
+      .catch(err => alert(" Succesfully " ));
+    }
+  </script>
+
+
+
+
+</body>
+</html>
