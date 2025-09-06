@@ -1,12 +1,9 @@
-<!DOCTYPE html>
+< ! DOCTYPE html>
 <html>
-
 <head>
     <title>Send Mail</title>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
-
-
 </head>
 
 <body>
@@ -27,8 +24,8 @@
             })
                 .then(function (message) {
                     alert("mail sent successfully")
-                });
-        }
+                })
+            }
     </script>
 </body>
 
