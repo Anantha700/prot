@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <form method="post">
+        <input type="button" value="Send Email" onclick="sendEmail()" />
+    </form>
+
+    <script type="text/javascript">
+        // make function async so we can use await
+        async function sendEmail() {
+            try {
+                const message = await Email.send({
+                   SecureToken :"C973D7AD-F097-4B95-91F4-40ABC5567812", // Required if using server token authentication
+                    From: "helpdesk@mail.sjctni.edu",
+                    To: "rockyanantha7@gmail.com",
+                    Subject: "Welcome",
+                    Body: "This is Anand from ICT in St Joseph's College"
+                });
+
+                alert("Mail sent successfully: " + message);
+            } catch (error) {
+                console.error("Error sending email:", error);
+                alert("Failed to send mail");
+            }
+        }
+    </script>
+</body>
+</html>
