@@ -148,9 +148,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </span>
         </div>
         <div id="navigation">
-<div style="text-align: right; color:Blue; background-color: #dceef3ff; padding: 5px;
+<div style="text-align: right; color:Blue; background-color: #dceef3ff; padding: 5px; margin-top: 10px; margin-bottom:10px ;
 background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%)">;
-    <span style="font-size: 30px; font-weight: bold; color: whitesmoke; padding-bottom: 10px;">
+    <span style="font-size: 30px; font-weight: bold; color: whitesmoke; padding-bottom: 10px;"> 
     <center>"Extension Department - Shepherd"</center>
 </span> 
 </div>
